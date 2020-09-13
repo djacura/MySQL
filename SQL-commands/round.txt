@@ -1,0 +1,9 @@
+mysql> select round(avg(Total), 2) from Invoice;
++----------------------+
+| round(avg(Total), 2) |
++----------------------+
+|                 5.65 |
++----------------------+
+1 row in set (0.00 sec)
+
+mysql> notee

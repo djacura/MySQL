@@ -1,0 +1,54 @@
+mysql> select count(*) from Customer;
++----------+
+| count(*) |
++----------+
+|       59 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select count(FirstName) from Customer;
++------------------+
+| count(FirstName) |
++------------------+
+|               59 |
++------------------+
+1 row in set (0.00 sec)
+
+mysql> select count(*) from Customer
+    -> where FirstName = 'Frank';
++----------+
+| count(*) |
++----------+
+|        2 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> select count(*) from Employee
+    -> where EmployeeId = '4';
++----------+
+| count(*) |
++----------+
+|        1 |
++----------+
+1 row in set (0.00 sec)
+
+mysql> SELECT COUNT(FirstName) FROM Customer WHERE SupportRepId = 4
+    -> ;
++------------------+
+| COUNT(FirstName) |
++------------------+
+|               20 |
++------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT Employee.FirstName AS Employee, COUNT(Customer.FirstName) AS Customer FROM Employee
+    -> JOIN Customer ON Customer.SupportRepId = Employee.EmployeeId
+    -> WHERE Employee.FirstName = 'Jane';
++----------+----------+
+| Employee | Customer |
++----------+----------+
+| Jane     |       21 |
++----------+----------+
+1 row in set (0.01 sec)
+
+mysql> notee

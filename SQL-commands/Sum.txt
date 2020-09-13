@@ -1,0 +1,19 @@
+mysql> select Total from Invoice
+    -> where InvoiceId = 2;
++-------+
+| Total |
++-------+
+|  3.96 |
++-------+
+1 row in set (0.00 sec)
+
+mysql> select sum(unitPrice * Quantity) from InvoiceLine
+    -> where InvoiceId = 2;
++---------------------------+
+| sum(unitPrice * Quantity) |
++---------------------------+
+|                      3.96 |
++---------------------------+
+1 row in set (0.00 sec)
+
+mysql> notee

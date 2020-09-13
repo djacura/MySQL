@@ -1,0 +1,51 @@
+mysql> insert into MediaType (Name) 
+    -> values ('Test Media Type 1');
+Query OK, 1 row affected (0.02 sec)
+
+mysql> insert into Album (Title, ArtistId)
+    -> values ('Boy', 150);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> select AlbumId from Album where Title = 'Boy'
+    -> ;
++---------+
+| AlbumId |
++---------+
+|     348 |
++---------+
+1 row in set (0.00 sec)
+
+mysql> select MediaTypeId from MediaType
+    -> where Name = 'Protected AAC audio file';
++-------------+
+| MediaTypeId |
++-------------+
+|           2 |
++-------------+
+1 row in set (0.00 sec)
+
+mysql> select GenreId from Genre
+    -> where Name = 'Rock';
++---------+
+| GenreId |
++---------+
+|       1 |
++---------+
+1 row in set (0.01 sec)
+
+mysql> insert into Track (Name, AlbumId, MediaTypeId, GenreID, Composer, Milliseconds, Bytes, UnitPrice)
+    -> values ('I Will Follow', 348, 2, 1, 'U2', 220000, 1234, 0.99);
+Query OK, 1 row affected (0.03 sec)
+
+mysql> insert into Track (Name, AlbumId, MediaTypeId, GenreID, Composer, Milliseconds, Bytes, UnitPrice)
+    -> values ('Twilight', 348, 2, 1, 'U2', 253200, 1234, 0.99),
+    -> ('An Cat Dubh', 348, 2, 1, 'U2', 267600, 1234, 0.99),
+    -> ('Into The Heart', 348, 2, 1, 'U2, 196200, 1234, 0.99),
+    '> ('Out Of Control', 348, 2, 1, 'U2, 247200, 1234, 0.99);
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'Out Of Control', 348, 2, 1, 'U2, 247200, 1234, 0.99)' at line 5
+mysql> insert into Track (Name, AlbumId, MediaTypeId, GenreID, Composer, Milliseconds, Bytes, UnitPrice) values ('Twilight', 348, 2, 1, 'U2', 253200, 1234, 0.99), ('An Cat Dubh', 348, 2, 1, 'U2', 267600, 1234, 0.99), ('Into The Heart', 348, 2, 1, 'U2', 196200, 1234, 0.99),
+('Out Of Control', 348, 2, 1, 'U2', 247200, 1234, 0.99);
+Query OK, 4 rows affected (0.02 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> notee
